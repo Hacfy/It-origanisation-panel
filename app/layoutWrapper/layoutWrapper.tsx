@@ -2,13 +2,14 @@
 
 import { usePathname } from "next/navigation";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import  AppSidebar  from "@/components/app-sidebar";
+import AppSidebar from "@/components/app-sidebar";
 
 const excludedPaths = new Set([
   "/login",
   "/forgotpassword",
   "/forgotpassword/otp",
   "/forgotpassword/newpassword",
+  "/superAdmins-create"
 ]);
 
 export function LayoutWrapper({ children }: { children: React.ReactNode }) {
@@ -20,9 +21,9 @@ export function LayoutWrapper({ children }: { children: React.ReactNode }) {
 
   return (
     <SidebarProvider>
-      <div className="flex">
+      <div className="flex min-h-screen">
         {/* Sidebar */}
-       <AppSidebar/>
+        <AppSidebar />
 
         {/* Page content + trigger */}
         <main className="flex-1 p-4">
